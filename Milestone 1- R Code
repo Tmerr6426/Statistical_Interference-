@@ -1,0 +1,27 @@
+#R project part 1
+ #Column 1
+library(readr)
+Emergency_call_data <- read_csv("911_End-to-End_Data.csv")
+View(Emergency_call_data)
+x= Emergency_call_data
+hist(x$`Call to First Pickup`, xlab="call duration to pick up in seconds", ylab="frequency of duration", main="Histogram of call Duration until pickup")
+mean(x$`Call to First Pickup`)   #3.53
+median(x$`Call to First Pickup`) #3.51
+var(x$`Call to First Pickup`)    #1.242497
+sd(x$`Call to First Pickup`)     #1.114673
+
+ #Column 2
+column2 = x$`# of Incidents Calculated`
+hist(column2, main="Number of Incidents", xlab="number of Total Incidents per each department/Situation per date", ylab="fequency of Incidents")
+mean(column2)    # 3247.498
+median(column2)  #2425
+var(column2)     #11439170
+sd(column2)     # 3382.184
+
+ #Column 3
+column3= x$`Call to Agency Dispatch`
+hist(column3, main="Histogram of call to Dispatch", xlab= "Time it takes to dispatch in Seconds", ylab="Fequency of time it takes")
+
+ #column 4
+column4= x$`Call to Agency Arrival`
+hist(column4, main="Histogram of time until arrival", xlab="Time from call until arrival in seconds", ylab ="fequency of time departments take to arrrive")
