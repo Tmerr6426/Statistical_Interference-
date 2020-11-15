@@ -11,7 +11,7 @@ plot(x,y, main = " From First call vs  First Arrival", xlab="Call to First Picku
 #Step 8 part 1
 n = call_data$`Average Calltaker Processing`
 standard = sd(n)
-standard #  0.8349272mean = mean(n)
+standard #  0.8349272
 mean = mean(n)
 mean # 2.200816
 error = qnorm(0.975)*standard/sqrt(6348)
