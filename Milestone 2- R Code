@@ -1,3 +1,4 @@
+#Step 7
 library(readr)
 call_data <- read_csv("Project part 1/911_End-to-End_Data.csv")
 View(call_data)
@@ -6,3 +7,29 @@ y = call_data$`Call to First Arrival (Multi-Agency Incidents)`
 cor(x,y)# 0.03004135
 plot(x,y, main = " From First call vs  First Arrival", xlab="Call to First Pickup", ylab="Call to First Arrival")
 
+
+#Step 8 part 1
+n = call_data$`Average Calltaker Processing`
+standard = sd(n)
+standard #  0.8349272mean = mean(n)
+mean = mean(n)
+mean # 2.200816
+error = qnorm(0.975)*standard/sqrt(6348)
+error # 0.02053895
+upper = mean + error
+lower = mean - error
+upper # 2.221355
+lower # 2.180277
+
+#Step 8 part 2
+t = call_data$`Median Travel`
+standard2= sd(t)
+standard2 # 547.5594
+mean2=mean(t)
+mean2 # 616.024
+error2=qnorm(0.975)*standard2/sqrt(6348)
+error2 # 13.46979
+upper2 = mean2 + error2
+upper2 # 629.4938
+lower2 = mean2 - error2
+lower2 # 602.5542
