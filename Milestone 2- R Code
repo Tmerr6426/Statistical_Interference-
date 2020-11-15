@@ -1,1 +1,8 @@
+library(readr)
+call_data <- read_csv("Project part 1/911_End-to-End_Data.csv")
+View(call_data)
+x = call_data$`Call to First Pickup`
+y = call_data$`Call to First Arrival (Multi-Agency Incidents)`
+cor(x,y)# 0.03004135
+plot(x,y, main = " From First call vs  First Arrival", xlab="Call to First Pickup", ylab="Call to First Arrival")
 
