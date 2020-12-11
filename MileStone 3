@@ -1,0 +1,44 @@
+library(readr)
+call_data <- read_csv("Project part 1/911_End-to-End_Data.csv")
+View(call_data)
+call_data
+plot(call_data$`Average Pickup`,call_data$`Average Dispatch`,xlab="Average Pickups", ylab='Average Dispatch', main = "Pickup vs Dispatch")
+x = plot(call_data$`Average Pickup`,call_data$`Average Dispatch`,xlab="Average Pickups", ylab='Average Dispatch', main = "Pickup vs Dispatch")
+y.lm <- lm(`Average Dispatch` ~ `Average Pickup`, data=call_data)
+y.lm
+
+#Coefficients:
+#  (Intercept)  `Average Pickup`  
+#    5.978            -7.481
+
+  abline(y.lm)
+abline(y.lm, col = "blue")
+coef(y.lm)
+#    (Intercept) `Average Dispatch` 
+#. 5.911571e-02      -8.806375e-05 
+hist(call_data$`Average Dispatch`)
+hist(call_data$`Average Dispatch`,xlab="Average Dispatch", main="Histogram of Dispatch")
+cor(call_data$`Average Dispatch`, call_data$`Average Pickup`)
+# -0.02566644
+cor(call_data$`Average Dispatch`, call_data$`Average Pickup`)^2
+# 0.0006587663
+summary(y.lm)
+
+
+#Call:
+#lm(formula = `Average Pickup` ~ `Average Dispatch`, data = call_data)
+
+#Residuals:
+#  Min       1Q   Median       3Q      Max 
+#-0.83910 -0.00779  0.00105  0.00173  0.57156 
+
+#Coefficients:
+#  Estimate Std. Error t value Pr(>|t|)    
+#(Intercept)         5.912e-02  3.359e-04 175.997   <2e-16 ***
+#  `Average Dispatch` -8.806e-05  4.306e-05  -2.045   0.0409 *  
+#  ---
+#  Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# Residual standard error: 0.01884 on 6346 degrees of freedom
+# Multiple R-squared:  0.0006588,	Adjusted R-squared:  0.0005013 
+# F-statistic: 4.183 on 1 and 6346 DF,  p-value: 0.04087
