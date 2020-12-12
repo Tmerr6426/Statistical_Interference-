@@ -42,3 +42,41 @@ summary(y.lm)
 # Residual standard error: 0.01884 on 6346 degrees of freedom
 # Multiple R-squared:  0.0006588,	Adjusted R-squared:  0.0005013 
 # F-statistic: 4.183 on 1 and 6346 DF,  p-value: 0.04087
+
+#-------------------------------------------------------------------------------------------
+#MileStone 3 Part 2
+
+
+x = call_data$`# of Incidents Calculated`
+mean(x) #3217.498
+sd(x)  #3382.184
+t.test(x,mu = 3000.00)
+
+
+# One Sample t-test
+
+# data:  x
+# t = 5.1236, df = 6347, p-value =
+#  3.086e-07
+# alternative hypothesis: true mean is not equal to 3000
+# 95 percent confidence interval:
+#  3134.281 3300.714
+# sample estimates:
+#  mean of x 
+# 3217.498 y = call_data$`Call to First Pickup`
+y = call_data$`Call to First Pickup`
+mean(y)
+sd(y)
+t.test(x,mu = 4.0)
+
+
+# One Sample t-test
+
+# data:  x
+# t = 75.701, df = 6347, p-value < 2.2e-16
+# alternative hypothesis: true mean is not equal to 4
+# 95 percent confidence interval:
+#  3134.281 3300.714
+# sample estimates:
+#  mean of x 
+# 3217.498 
